@@ -108,3 +108,44 @@ execute_extract >> execute_transform >> execute_load >> execute_check
 ```
 
 This DAG will run daily and execute the ETL pipeline followed by a check, with each step implemented as a Python function.
+
+## Submiting the DAG 
+
+Submitting a DAG is as simple as copying the DAG Python file into the dags folder in the AIRFLOW_HOME directory.
+
+Open a terminal and run the command below to set the AIRFLOW_HOME.
+
+```
+export AIRFLOW_HOME=/home/project/airflow
+echo $AIRFLOW_HOME
+````
+
+Run the command below to submit the DAG that was created in the previous exercise.
+
+```
+ cp my_first_dag.py $AIRFLOW_HOME/dags
+```
+
+Verify that your DAG actually got submitted.
+
+Run the command below to list out all the existing DAGs.
+
+```
+airflow dags list
+```
+
+Verify that my-first-python-etl-dag is a part of the output.
+
+```
+airflow dags list|grep "my-first-python-etl-dag"
+```
+You should see your DAG name in the output.
+
+Run the command below to list out all the tasks in my-first-python-etl-dag.
+
+```
+airflow tasks list my-first-python-etl-dag
+```
+You should see all the four tasks in the output.
+
+You can run the task from the Web UI. You can check the logs of the tasks by clicking the individual task in the Graph view.
