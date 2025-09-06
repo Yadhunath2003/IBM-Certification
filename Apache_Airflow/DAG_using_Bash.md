@@ -124,7 +124,7 @@ Copy your DAG file to the Airflow DAGs folder:
 cp my_first_dag.py $AIRFLOW_HOME/dags
 ```
 
-Verify DAG Submission
+### 4. Verify DAG Submission
 
 List all DAGs to confirm your DAG is present:
 
