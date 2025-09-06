@@ -1,4 +1,4 @@
-# DAG in Apache Airflow
+# DAG in Apache Airflow using PythonOperator
 
 A Directed Acyclic Graph (DAG) in Apache Airflow defines a pipeline of tasks that are executed in a specific order. In this example, the DAG will orchestrate a typical ETL (Extract, Transform, Load) workflow, followed by a check step. Each task—extract, transform, load, and check—will be implemented using the `PythonOperator`, which allows you to execute Python functions as Airflow tasks.
 
